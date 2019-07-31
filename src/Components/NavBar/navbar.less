@@ -1,0 +1,63 @@
+@import '../../variables.less';
+
+.nav-bar {
+  background-color: @dark-gray;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 72px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  color: @white;
+  font-size: 32px;
+  font-weight: bold;
+
+  hr {
+    height: 56px;
+  }
+
+  .nav-bar-logo {
+    img {
+      height: 72px;
+      padding: 0 20px;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    align-items: center;
+
+    .nav-link {
+      margin: 0 24px;
+    }
+  }
+
+  .nav-right {
+    position: absolute;
+    right: 0;
+  }
+
+  .user-log-in {
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    align-items: center;
+
+    .log-in-link {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding: 16px 24px;
+      font-size: 24px;
+
+      img {
+        height: 50px;
+        padding: 0 8px;
+      }
+  }
+  }
+}
