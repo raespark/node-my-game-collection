@@ -1,0 +1,27 @@
+@import '../../../variables.less';
+
+.filter-group {
+  .filter-group-header {
+    text-align: center;
+  }
+
+  .filter-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .filter {
+      background-color: @accent-color-dark;
+      border-radius: 5px;
+      padding: 8px;
+      margin: 4px;
+      color: @white;
+      font-weight: bold;
+      font-size: 14px;
+
+      &.active {
+        background-color: @accent-color-light;
+      }
+    }
+  }
+}

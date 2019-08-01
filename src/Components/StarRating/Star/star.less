@@ -1,0 +1,27 @@
+@import '../../../variables.less';
+
+.star {
+  .star-svg {
+    path {
+      fill: @light-gray;
+    }
+
+    &:hover {
+      path {
+        fill: @gray;
+      }
+    }
+
+    &.active {
+      path {
+        fill: @accent-color-light;
+      }
+
+      &:hover {
+        path {
+          fill: @accent-color-dark;
+        }
+      }
+    }
+  }
+}
