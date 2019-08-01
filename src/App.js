@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
+      <FilterSideBar/>
       <div className = 'body'>
-        <FilterSideBar/>
         <GameList/>
       </div>
     </div>
