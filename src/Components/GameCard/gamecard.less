@@ -1,0 +1,108 @@
+@import '../../variables.less';
+
+@title-width: 0 0 calc(100% - 200px);
+
+.game-card {
+  width: 95%;
+  padding: 10px;
+
+  .image-and-description {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    align-items: center;
+
+    .game-cover-image {
+      max-height: 300px;
+      width: 200px;
+      border-radius: 10px;
+    }
+
+    .game-info {
+      width: calc(100% - 240px);
+      padding: 20px;
+      .game-title {
+        .title-header {
+          font-weight: bold;
+          font-size: 20px;
+          margin-right: 30px;
+        }
+
+        .game-title-hr {
+          width: calc(100% - 40px);
+          border: initial;
+          border-style: solid;
+          border-color: @light-gray;
+          border-width: 1px;
+          color: @light-gray;
+          margin-right: 10px;
+          margin-bottom: 20px;
+        }
+      }
+
+      .star-rating {
+        justify-content: left;
+      }
+
+      .game-description {
+        font-weight: bold;
+        color: @gray;
+        overflow: hidden;
+        position: relative; 
+        line-height: 25px;
+        max-height: 90px; 
+        text-align: justify;  
+        /* place for '...' */
+        margin-right: -30px;
+        padding-right: 30px;
+
+        &:before {
+          /* points in the end */
+          content: '...';
+          /* absolute position */
+          position: absolute;
+          /* set position to right bottom corner of block */
+          right: 0;
+          bottom: 0;
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+
+  .genres-and-platforms {
+    display: flex;
+
+    .platforms {
+      width: 40%;
+      .platform-list {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+    }
+
+    .genres {
+      width: 60%;
+      .genre-list {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+
+      .no-genres-text {
+        font-weight: bold;
+        color: @gray;
+      }
+    }
+  }
+
+  .game-card-hr {
+    width: 100%;
+    border: initial;
+    border-style: solid;
+    border-color: @gray;
+    border-width: 1px;
+    color: @gray;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+}

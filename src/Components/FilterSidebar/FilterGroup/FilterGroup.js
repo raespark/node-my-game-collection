@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Genre from '../../Genre/Genre';
 import './filtergroup.less';
 
 class FilterSideBar extends Component {
@@ -18,7 +19,7 @@ class FilterSideBar extends Component {
         <div className="filter-list">
           {this.state.filters.map((filter, i) => (
             <div className={this.state.activeFilters.some(index => index === i) ? "filter active" : 'filter'} key={i}>
-              {filter}
+              <Genre genre={filter}/>
             </div>
           ))}
         </div>

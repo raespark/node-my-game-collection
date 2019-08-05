@@ -1,5 +1,4 @@
 import React from 'react';
-import {star} from '../../../Utils/Images';
 import './star.less';
 
 function Star(props) {
