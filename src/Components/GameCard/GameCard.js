@@ -9,7 +9,7 @@ class GameCard extends Component {
   render() {
     const game = this.props.game;
     return (
-      <div className="game game-card">
+      <div key={game.id} id={game.id} className="game game-card">
         <div className="image-and-description">
           <img className="game-cover-image" src={game.cover} alt={game.title + ' cover'}/>
           <div className="game-info">
