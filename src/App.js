@@ -12,7 +12,8 @@ class App extends Component {
       games: GameData,
       genreFilters: [],
       platformFilters: [],
-      ratingFilter: 0
+      ratingFilter: 0,
+      textFilter: ''
     }
 
     this.filter = this.filter.bind(this);
@@ -25,6 +26,7 @@ class App extends Component {
       let genreFilter = true;
       let platformFilter = true;
       let ratingFilter = true;
+      let textFilter = true;
 
       this.state.genreFilters.forEach((genreId) => {
         genreFilter = genreFilter && game.genres.some(genre => genre.id === genreId);
@@ -36,7 +38,9 @@ class App extends Component {
 
       ratingFilter = game.rating >= this.state.ratingFilter;
 
-      return genreFilter && platformFilter && ratingFilter;
+      textFilter = game.title.toLowerCase().includes(this.state.textFilter.toLowerCase());
+
+      return genreFilter && platformFilter && ratingFilter && textFilter;
     });
 
     this.setState({games});
@@ -65,6 +69,10 @@ class App extends Component {
     }
     if(type === 2) {
       this.setState({ratingFilter: filter}, this.filter);
+    }
+
+    if(type === 3) {
+      this.setState({textFilter: filter}, this.filter);
     }
   }
 

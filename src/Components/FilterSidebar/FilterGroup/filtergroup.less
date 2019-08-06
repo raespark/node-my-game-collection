@@ -12,9 +12,21 @@
 
     .filter {
       cursor: pointer;
-      &.active, &:hover {
+
+      &.active {
         .genre {
           background-color: @accent-color-light;
+          &:hover {
+            transition: border .1s;
+            border: 2px solid @accent-color-light;
+          }
+        }
+      }
+
+      .genre{
+        &:hover {
+          transition: border .1s;
+          border: 2px solid @accent-color-dark;
         }
       }
     }

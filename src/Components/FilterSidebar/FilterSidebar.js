@@ -51,7 +51,7 @@ class FilterSideBar extends Component {
           <h2 className="header">{'Filters'}</h2>
           <div className="filters">
             <div className="row">
-              <SearchBar/>
+              <SearchBar onChange={(e) => {this.handleFilter(e.target.value, 3)}}/>
             </div>
             <div className="row">
               <FilterGroup title='Genres' filters={genreList} toggleFilter={(id) => {this.handleFilter(id, 0)}}/>

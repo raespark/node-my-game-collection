@@ -30,6 +30,9 @@ class StarRating extends Component{
   handleStarClick(e,i) {
     if(this.props.editable) {
       // Return % fill for stars
+      if(i === this.state.activeStars) {
+        i = 0;
+      }
       this.props.starClick((i/this.state.totalStars) * 100);
       this.setState({activeStars: i});
     }

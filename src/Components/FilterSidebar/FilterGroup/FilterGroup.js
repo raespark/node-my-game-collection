@@ -18,13 +18,13 @@ class FilterSideBar extends Component {
     let activeIndex = activeFilters.indexOf(i);
 
     if(activeIndex > -1){
-      activeFilters.splice(activeIndex);
+      activeFilters.splice(activeIndex, 1);
     }
     else {
       activeFilters.push(i);
     }
-    this.setState({activeFilters});
-    this.props.toggleFilter(id);
+    
+    this.setState({activeFilters}, this.props.toggleFilter(id));
   }
 
   render() {
