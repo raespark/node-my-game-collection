@@ -4,6 +4,7 @@
   background-color: @white;
   padding: @sidebar-padding;
   width: @sidebar-width;
+  padding: @sidebar-padding;
   height: 101vh;
   position: fixed;
   left: 0;
@@ -40,22 +41,24 @@
     }
   }
 
-  .header {
-    margin: 8px;
-    color: @brand-color-dark;
-  }
-
-  .filters {
-    display: flex;
-    flex-flow: row wrap;
-    text-align: center;
-    .row {
-      flex: 0 0 100%;
-    }
-  }
-
   .side-bar-collapsable {
     display: none;
+  }
 
+  .sidebar-body {
+
+    .header {
+      margin: 8px;
+      color: @brand-color-dark;
+    }
+
+    .filters {
+      display: flex;
+      flex-flow: row wrap;
+      text-align: center;
+      .row {
+        flex: 0 0 100%;
+      }
+    }
   }
 }

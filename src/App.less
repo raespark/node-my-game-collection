@@ -10,9 +10,6 @@
     background-color: @gray;
     border-color: @gray;
     border-radius: 10px;
-    border: 0;
-    width: 4px;
-    margin: 0;
   }
 
   .body {
@@ -20,8 +17,10 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+  }
 
-    @media (max-width: @tablet-screen-max) {
+  @media (max-width: @tablet-screen-max) {
+    .body {
       padding-left: calc(@sidebar-width-collapsed + 2 * @sidebar-padding);
     }
   }

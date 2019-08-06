@@ -7,7 +7,7 @@ import './App.less';
 function App() {
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar className='not-on-mobile'/>
       <FilterSideBar/>
       <div className = 'body'>
         <GameList/>
