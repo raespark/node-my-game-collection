@@ -8,11 +8,25 @@ class FilterSideBar extends Component {
     super(props);
     this.state = {
       filters: props.filters,
-      activeFilters: [3, 6, 7]
+      activeFilters: []
     }
     this.state.filters.sort();
-    this.state.filters.push('Other');
   }
+
+  handleFilter(e, id, i) {
+    let activeFilters = this.state.activeFilters;
+    let activeIndex = activeFilters.indexOf(i);
+
+    if(activeIndex > -1){
+      activeFilters.splice(activeIndex);
+    }
+    else {
+      activeFilters.push(i);
+    }
+    this.setState({activeFilters});
+    this.props.toggleFilter(id);
+  }
+
   render() {
     return (
       <div className="filter-group">
@@ -20,7 +34,7 @@ class FilterSideBar extends Component {
         <div className="filter-list">
           {this.state.filters.map((filter, i) => (
             <div className={classnames({active: this.state.activeFilters.some(index => index === i)}, 'filter')} key={i}>
-              <Genre genre={filter}/>
+              <Genre genre={filter.name} onClick={(e) => this.handleFilter(e, filter.id, i)}/>
             </div>
           ))}
         </div>

@@ -4,15 +4,17 @@ import SearchBar from '../SearchBar/SearchBar';
 import FilterGroup from './FilterGroup/FilterGroup';
 import StarRating from '../StarRating/StarRating';
 import {arrow} from '../../Utils/Images';
+import genreList from '../../mockGenreData';
+import platforms from '../../mockPlatformsList';
 import './filtersidebar.less';
-
 
 class FilterSideBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       collapse: false,
-      canCollapse: false
+      canCollapse: false,
+      filters: []
     }
 
     this.resize = this.resize.bind(this);
@@ -38,12 +40,9 @@ class FilterSideBar extends Component {
     this.setState({collapse});
   }
 
-  genreList = ['Point-and-click', 'Fighting', 'Rhythm', 'Visual Novel',
-    'Platformer', 'Puzzle', 'Racing', 'RTS', 'RPG', 'JRPG',
-    'Simulator', 'Strategy', 'TBS', 'Tactical', 'Beat \'em Up', 
-     'Adventure', 'Indie'];
-  platforms = ['Mac', 'PC', 'Switch', 'PS4',
-    'PS3', 'PS2', 'Steam', '3DS', 'Wii', 'WiiU', 'DS']
+  handleFilter(id, type) {
+    this.props.toggleFilter(id, type);
+  }
   
   render() {
     return (
@@ -55,14 +54,14 @@ class FilterSideBar extends Component {
               <SearchBar/>
             </div>
             <div className="row">
-              <FilterGroup title='Genres' filters={this.genreList}/>
+              <FilterGroup title='Genres' filters={genreList} toggleFilter={(id) => {this.handleFilter(id, 0)}}/>
             </div>
             <div className="row">
               <h3>{'Rating'}</h3>
-              <StarRating editable/>
+              <StarRating editable starClick={(rating) => this.handleFilter(rating, 2)}/>
             </div>
             <div className="row">
-              <FilterGroup title='Platforms' filters={this.platforms}/>
+              <FilterGroup title='Platforms' filters={platforms} toggleFilter={(id) => {this.handleFilter(id, 1)}}/>
             </div>
           </div>
         </div>

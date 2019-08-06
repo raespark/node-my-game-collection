@@ -24,11 +24,13 @@ class StarRating extends Component{
       percentFill
     }
 
-    this.starClick = this.starClick.bind(this);
+    this.handleStarClick = this.handleStarClick.bind(this);
   }
 
-  starClick(e,i) {
+  handleStarClick(e,i) {
     if(this.props.editable) {
+      // Return % fill for stars
+      this.props.starClick((i/this.state.totalStars) * 100);
       this.setState({activeStars: i});
     }
   }
@@ -38,7 +40,12 @@ class StarRating extends Component{
     for(let i = 1; i <= maxStars; i++) {
       if (i === activeStars + 1) {
         stars.push(
-          <Star partialFill={this.state.percentFill} editable={this.props.editable} key={i} active={i < activeStars} onClick={(e) => this.starClick(e,i)}/>
+          <Star
+            partialFill={this.state.percentFill}
+            editable={this.props.editable}
+            key={i}
+            active={i < activeStars}
+            onClick={(e) => this.handleStarClick(e,i)}/>
         )
       }
       else {
@@ -48,7 +55,7 @@ class StarRating extends Component{
             key={i}
             partialFill={i <= activeStars ? 100 : '0%'}
             active={i <= activeStars}
-            onClick={(e) => this.starClick(e,i)}
+            onClick={(e) => this.handleStarClick(e,i)}
           />
         )
       }
