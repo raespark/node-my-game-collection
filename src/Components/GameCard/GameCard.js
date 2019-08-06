@@ -19,7 +19,7 @@ class GameCard extends Component {
               </h2>
               <hr className="game-title-hr"/>
             </div>
-            <StarRating/>
+            <StarRating stars={game.rating}/>
             <div className="game-description">
               <p className="description-text">
                 {game.description || '- No Description -'}
@@ -31,16 +31,16 @@ class GameCard extends Component {
           <div className="platforms">
             <h3>{'Owned on:'}</h3>
             <div className="platform-list">
-              { game.platforms.map(platform => (
-                <Genre genre={platform.name}/>
+              { game.platforms.map((platform, i) => (
+                <Genre key={i} genre={platform.name}/>
               ))}
             </div>
           </div>
           <div className="genres">
             <h3>{'Genres:'}</h3>
             {!!game.genres.length && <div className="genre-list">
-              {game.genres.map(platform => (
-                <Genre genre={platform.name}/>
+              {game.genres.map((platform,i) => (
+                <Genre key={i} genre={platform.name}/>
               ))}
             </div>}
             {!game.genres.length && <div className="no-genres-text">

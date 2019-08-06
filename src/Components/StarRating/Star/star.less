@@ -5,22 +5,24 @@
     path {
       fill: @light-gray;
     }
-
-    &:hover {
-      path {
-        fill: @gray;
+    &.editable {
+      &:hover {
+        path {
+          fill: @gray;
+        }
       }
-    }
+      &.active {
+        &:hover {
+          path {
+            fill: @brand-color-dark;
+          }
+        }
+      }
+  }
 
     &.active {
       path {
-        fill: @accent-color-light;
-      }
-
-      &:hover {
-        path {
-          fill: @accent-color-dark;
-        }
+        fill: @brand-color-light;
       }
     }
   }

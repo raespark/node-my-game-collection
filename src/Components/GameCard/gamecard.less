@@ -10,17 +10,18 @@
     display: flex;
     flex-flow: row wrap;
     width: 100%;
-    align-items: center;
 
     .game-cover-image {
-      max-height: 300px;
-      width: 200px;
+      max-height: 250px;
+      max-width: 200px;
+      width: auto;
+      height: auto;
       border-radius: 10px;
     }
 
     .game-info {
-      width: calc(100% - 240px);
-      padding: 20px;
+      width: calc(100% - 264px);
+      padding: 0 24px;
       .game-title {
         .title-header {
           font-weight: bold;
@@ -37,6 +38,7 @@
           color: @light-gray;
           margin-right: 10px;
           margin-bottom: 20px;
+          margin-left: 0;
         }
       }
 
@@ -52,11 +54,15 @@
         http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/?fbclid=IwAR0QLS4Wb22gibkA6TO5lbY2qRh2GS0k80UfCpePsWkSKEUzLe0OiMpnAWU */
         position: relative; 
         line-height: 25px;
-        max-height: 90px; 
+        max-height: 100px; 
         text-align: justify;  
         /* place for '...' */
         margin-right: -30px;
         padding-right: 30px;
+
+        .description-text {
+          margin-top: 0;
+        }
 
         &:before {
           /* points in the end */

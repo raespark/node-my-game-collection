@@ -34,7 +34,6 @@ class FilterSideBar extends Component {
   }
 
   collapseSideBar() {
-    console.log('CLICK!');
     let collapse = !this.state.collapse;
     this.setState({collapse});
   }
@@ -60,7 +59,7 @@ class FilterSideBar extends Component {
             </div>
             <div className="row">
               <h3>{'Rating'}</h3>
-              <StarRating/>
+              <StarRating editable/>
             </div>
             <div className="row">
               <FilterGroup title='Platforms' filters={this.platforms}/>

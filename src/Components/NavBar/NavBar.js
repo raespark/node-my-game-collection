@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {logo, user} from '../../Utils/Images';
-import classnames from 'classnames';
 import './navbar.less';
 
 class NavBar extends Component {
   render() {
     return (
-      <div className={classnames('nav-bar', this.props.className)}>
+      <div className="nav-bar">
         <div className = "nav-bar-logo logo">
           <img src={logo.image} alt={logo.text}/>
         </div>

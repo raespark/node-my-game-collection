@@ -10,8 +10,8 @@ class GameList extends Component {
     return (
       <div className="game-list">
         {
-          mockGamesData.map(game => (
-            <GameCard game={game}/>
+          mockGamesData.map((game, i) => (
+            <GameCard game={game} key={i}/>
           ))
         }
       </div>

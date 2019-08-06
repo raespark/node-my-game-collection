@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import './genre.less';
 
-class FilterSideBar extends Component {
+class Genre extends Component {
   render() {
     return (
       <div className={classnames(this.props.className, 'genre')}>
@@ -12,4 +12,4 @@ class FilterSideBar extends Component {
   }
 }
 
-export default FilterSideBar;
+export default Genre;
