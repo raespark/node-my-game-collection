@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import Genre from '../../Genre/Genre';
 import './filtergroup.less';
 
@@ -18,7 +19,7 @@ class FilterSideBar extends Component {
         <h3 className="filter-group-header">{this.props.title}</h3>
         <div className="filter-list">
           {this.state.filters.map((filter, i) => (
-            <div className={this.state.activeFilters.some(index => index === i) ? "filter active" : 'filter'} key={i}>
+            <div className={classnames({active: this.state.activeFilters.some(index => index === i)}, 'filter')} key={i}>
               <Genre genre={filter}/>
             </div>
           ))}

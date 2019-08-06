@@ -2,7 +2,7 @@
 
 .App {
   background-color: @brand-color-light;
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - @header-height);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding-top: 64px;
 
@@ -20,5 +20,9 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+
+    @media (max-width: @tablet-screen-max) {
+      padding-left: calc(@sidebar-width-collapsed + 2 * @sidebar-padding);
+    }
   }
 }

@@ -4,9 +4,41 @@
   background-color: @white;
   padding: @sidebar-padding;
   width: @sidebar-width;
-  height: 100vh;
+  height: 101vh;
   position: fixed;
   left: 0;
+  overflow: scroll;
+  transition: left .5s;
+  z-index: 2;
+
+  &.collapsed {
+    transition: left .5s;
+    left: calc(-1 * (@sidebar-width + @sidebar-padding));
+    .side-bar-collapsable {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.collapsable {
+    display: flex;
+    width: calc(@sidebar-width + @sidebar-width-collapsed + @sidebar-padding);
+
+    .sidebar-body {
+      margin-right: 30px;
+    }
+
+    .side-bar-collapsable {
+      cursor: pointer;
+      display: block;
+      img {
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
 
   .header {
     margin: 8px;
@@ -20,5 +52,10 @@
     .row {
       flex: 0 0 100%;
     }
+  }
+
+  .side-bar-collapsable {
+    display: none;
+
   }
 }

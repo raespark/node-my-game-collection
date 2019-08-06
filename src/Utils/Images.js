@@ -2,6 +2,7 @@ import Logo from '../Assets/logo.svg';
 import User from '../Assets/user.svg';
 import Search from '../Assets/search.svg';
 import Star from '../Assets/star.svg';
+import Arrow from '../Assets/collapse-arrow.png';
 
 const logo = {
     image: Logo,
@@ -23,4 +24,9 @@ const star = {
     text: 'star'
 }
 
-export {logo, user, search, star};
+const arrow = {
+    image: Arrow,
+    text: 'toggle arrow'
+}
+
+export {logo, user, search, star, arrow};

@@ -1,9 +1,10 @@
 import React from 'react';
+import classnames from 'classnames';
 import './star.less';
 
 function Star(props) {
   return (
-    <div className="star">
+    <div className={classnames(props.className, 'star')}>
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
         width="32px" 
