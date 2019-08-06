@@ -51,7 +51,7 @@ class App extends Component {
     let activeIndex = activeFilters.indexOf(id);
 
     if(activeIndex > -1){
-      activeFilters.splice(activeIndex);
+      activeFilters.splice(activeIndex, 1);
     }
     else {
       activeFilters.push(id);

@@ -17,4 +17,27 @@
   hr {
     margin: 10px;
   }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 30px;
+
+    img {
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+
+      &.disabled {
+        cursor: not-allowed;
+        opacity: .5;
+      }
+    }
+
+    .page-down {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }

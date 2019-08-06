@@ -10,7 +10,6 @@ class FilterSideBar extends Component {
       filters: props.filters,
       activeFilters: []
     }
-    this.state.filters.sort();
   }
 
   handleFilter(e, id, i) {
