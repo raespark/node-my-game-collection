@@ -25,7 +25,6 @@ class GameList extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(newProps.games);
     this.setState({currentOffset: this.paginationOffset, 
       games: newProps.games.slice(0, this.paginationOffset),
       allGames: newProps.games,

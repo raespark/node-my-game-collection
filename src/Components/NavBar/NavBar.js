@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import {logo, user} from '../../Utils/Images';
 import './navbar.less';
 
@@ -11,9 +12,9 @@ class NavBar extends Component {
         </div>
         <hr className="nav-hr"/>
         <div className= "nav-links">
-          <div className="nav-link text">
+          <Link to="/" className="nav-link text">
             {'HOME'}
-          </div>
+          </Link>
           <hr className="nav-hr"/>
           <div className="nav-link text">
             {'ADD'}

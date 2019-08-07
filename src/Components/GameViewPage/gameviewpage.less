@@ -1,0 +1,113 @@
+@import '../../variables.less';
+
+.view-game {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - @header-height);
+
+  .body {
+    width: 75%;
+    padding: 50px 30px;
+    background-color: @white;
+    display: flex;
+    
+    p {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+
+    h3 {
+      margin: 10px 0;
+    }
+
+    .image-column {
+      margin-right: 35px;
+      display: flex;
+      flex-flow: column nowrap;
+
+      .game-cover-image {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        border-radius: 10px;
+      }
+
+      .star-rating {
+        margin: 20px 0;
+      }
+
+      .age-rating {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+
+        .esrb-logo {
+          height: 100px;
+          width: auto;
+        }
+      }
+
+      .genres {
+        .genre-list {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+        }
+  
+        .no-genres-text {
+          font-weight: bold;
+          color: @gray;
+        }
+      }
+    }
+
+    .game-description-column {
+      width: 85%;
+      padding-right: 35px;
+      .game-header {
+        .game-title {
+          margin-top: 0;
+        }
+
+        .game-title-hr {
+          border: initial;
+          border-style: solid;
+          border-color: @light-gray;
+          border-width: 1px;
+          color: @light-gray;
+          margin-right: 10px;
+          margin-bottom: 20px;
+          margin-left: 0;
+        }
+      }
+
+      .game-description {
+        font-weight: bold;
+        font-size: 20px;
+        color: @gray;
+        text-align: justify;
+      }
+
+      .game-website {
+        margin: 25px 0;
+      }
+
+      .screenshots {
+        .game-screenshot {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .platforms {
+        .platform-list {
+          display: flex;
+
+          .platform {
+            margin: 0 25px;
+          }
+        }
+      }
+    }
+  }
+}

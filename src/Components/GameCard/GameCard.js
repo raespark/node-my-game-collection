@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import StarRating from '../StarRating/StarRating';
 import Genre from '../Genre/Genre';
 import './gamecard.less';
@@ -8,17 +9,20 @@ class GameCard extends Component {
   
   render() {
     const game = this.props.game;
+    const gameLink = '/game/' + game.id;
     return (
       <div key={game.id} id={game.id} className="game game-card">
         <div className="image-and-description">
-          <img className="game-cover-image" src={game.cover} alt={game.title + ' cover'}/>
+          <Link to={gameLink}>
+            <img className="game-cover-image" src={game.cover} alt={game.title + ' cover'}/>
+          </Link>
           <div className="game-info">
-            <div className="game-title-and-year game-title">
+            <Link to={gameLink} className="game-title-and-year game-title">
               <h3 className="title-header">
                 {game.title + ' - ' + game.yearReleased}
               </h3>
               <hr className="game-title-hr"/>
-            </div>
+            </Link>
             <StarRating stars={game.rating}/>
             <div className="game-description">
               <p className="description-text">
