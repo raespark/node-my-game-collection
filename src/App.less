@@ -11,17 +11,4 @@
     border-color: @gray;
     border-radius: 10px;
   }
-
-  .body {
-    padding-left: calc(@sidebar-width + 2 * @sidebar-padding);
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-  }
-
-  @media (max-width: @tablet-screen-max) {
-    .body {
-      padding-left: calc(@sidebar-width-collapsed + 2 * @sidebar-padding);
-    }
-  }
 }
