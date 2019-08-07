@@ -56,7 +56,7 @@ class StarRating extends Component{
           <Star
             editable={this.props.editable}
             key={i}
-            partialFill={i <= activeStars ? 100 : '0%'}
+            partialFill={i <= activeStars ? 100 : 0}
             active={i <= activeStars}
             onClick={(e) => this.handleStarClick(e,i)}
           />

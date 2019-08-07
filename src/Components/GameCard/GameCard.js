@@ -14,9 +14,9 @@ class GameCard extends Component {
           <img className="game-cover-image" src={game.cover} alt={game.title + ' cover'}/>
           <div className="game-info">
             <div className="game-title-and-year game-title">
-              <h2 className="title-header">
+              <h3 className="title-header">
                 {game.title + ' - ' + game.yearReleased}
-              </h2>
+              </h3>
               <hr className="game-title-hr"/>
             </div>
             <StarRating stars={game.rating}/>

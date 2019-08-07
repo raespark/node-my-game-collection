@@ -2,10 +2,9 @@
 
 .game-list {
   background-color: @white;
-  border-radius: 5px;
   padding: 8px;
-  margin: 25px 50px 75px 50px;
-  min-width: 80%;
+  margin: 0 50px;
+  width: 80%;
 
   .no-games-text {
     font-weight: bold;
@@ -15,13 +14,13 @@
   }
 
   hr {
-    margin: 10px;
+    margin: 5px 10px;
   }
 
   .pagination {
     display: flex;
     justify-content: space-between;
-    padding: 5px 30px;
+    padding: 10px 30px;
 
     img {
       height: 30px;
@@ -39,5 +38,11 @@
         transform: rotate(180deg);
       }
     }
+  }
+}
+
+@media(max-width: @tablet-screen-max) {
+  .game-list {
+    width: 90%;
   }
 }

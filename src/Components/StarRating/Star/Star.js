@@ -7,8 +7,8 @@ function Star(props) {
     <div className={classnames('star', props.className)} onClick={props.onClick}>
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        width="32px" 
-        height="32px" 
+        width="30px" 
+        height="30px" 
         viewBox="0 0 48 48" 
         version="1.1" 
         className={classnames('star-svg', {active: props.active}, {editable: props.editable})}>

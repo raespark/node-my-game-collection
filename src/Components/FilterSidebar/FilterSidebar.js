@@ -29,7 +29,7 @@ class FilterSideBar extends Component {
   }
 
   resize() {
-    let currentCollapse = (window.innerWidth <= 960);
+    let currentCollapse = (window.innerWidth <= 1024);
     if (currentCollapse !== this.state.canCollapse) {
       this.setState({canCollapse: currentCollapse, collapse: currentCollapse});
     }
@@ -48,7 +48,7 @@ class FilterSideBar extends Component {
     return (
       <div className={classnames({collapsable: this.state.canCollapse}, {collapsed: this.state.collapse},'filter-side-bar')}>
         <div className="sidebar-body">
-          <h2 className="header">{'Filters'}</h2>
+          <h3 className="header">{'Filters'}</h3>
           <div className="filters">
             <div className="row">
               <SearchBar onChange={(e) => {this.handleFilter(e.target.value, 3)}}/>
@@ -57,7 +57,7 @@ class FilterSideBar extends Component {
               <FilterGroup title='Genres' filters={genreList} toggleFilter={(id) => {this.handleFilter(id, 0)}}/>
             </div>
             <div className="row">
-              <h3>{'Rating'}</h3>
+              <h4>{'Rating'}</h4>
               <StarRating editable starClick={(rating) => this.handleFilter(rating, 2)}/>
             </div>
             <div className="row">
