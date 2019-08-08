@@ -6,6 +6,7 @@ import GameData from '../../mockGameData';
 import Genre from '../Genre/Genre';
 import Platform from '../Platform/Platform';
 import './gameviewpage.less';
+import Modal from '../Modal/Modal';
 
 class ViewGame extends Component {
   constructor(props){
@@ -14,16 +15,37 @@ class ViewGame extends Component {
     const {gameId} = props.match.params;
 
     this.game = GameData.find(game => game.id === parseInt(gameId));
+
+    this.state = {
+      showModal: false,
+      modalImage: ''
+    }
+
+    this.closeModal = this.closeModal.bind(this);
+    this.loadModalImage = this.loadModalImage.bind(this);
+  }
+
+  closeModal() {
+    this.setState({modalImage:'', showModal: false});
+  }
+
+  loadModalImage(image){
+    this.setState({modalImage: image, showModal: true})
   }
 
   render() {
+    console.log(this.game);
     return (
       <div className="view-game">
         <NavBar/>
         {!this.game && 
           <Redirect to="/not-found"/>
         }
-        <div className="body">
+        {this.state.showModal && <Modal closeModal={this.closeModal}>
+          <img className="game-screenshot" src={this.state.modalImage} alt={this.game.title + ' screenshot'}/>
+        </Modal>}
+
+        {this.game && <div className="body">
           <div className="image-column">
             <img className="game-cover-image" src={this.game.cover} alt={this.game.title + ' cover'}/>
             <StarRating stars={this.game.rating}/>
@@ -61,7 +83,13 @@ class ViewGame extends Component {
             }
             <div className="screenshots">
               <h3>{'Screenshots:'}</h3>
-              <img className="game-screenshot" src={this.game.screenshots[0]} alt="game-screenshot"/>
+              <div className="screenshot-list">
+                {
+                  this.game.screenshots.map(screenshot => (
+                    <img className="game-screenshot" src={screenshot} alt={this.game.title + ' screenshot'} onClick={(e) => this.loadModalImage(screenshot)}/>
+                  )
+                )}
+              </div>
             </div>
             <div className="platforms">
             <h3>{'Owned on:'}</h3>
@@ -72,7 +100,7 @@ class ViewGame extends Component {
             </div>
           </div>
           </div>
-        </div>
+        </div>}
       </div>
     );
   }

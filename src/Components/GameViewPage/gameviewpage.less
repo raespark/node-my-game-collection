@@ -63,7 +63,6 @@
 
     .game-description-column {
       width: 85%;
-      padding-right: 35px;
       .game-header {
         .game-title {
           margin-top: 0;
@@ -75,7 +74,7 @@
           border-color: @light-gray;
           border-width: 1px;
           color: @light-gray;
-          margin-right: 10px;
+          margin-right: 35px;
           margin-bottom: 20px;
           margin-left: 0;
         }
@@ -86,6 +85,7 @@
         font-size: 20px;
         color: @gray;
         text-align: justify;
+        padding-right: 35px;
       }
 
       .game-website {
@@ -93,9 +93,23 @@
       }
 
       .screenshots {
-        .game-screenshot {
-          width: 100%;
-          height: auto;
+
+        .screenshot-list {
+          display: flex;
+          justify-content: center;
+          flex-flow: row wrap;
+
+          .game-screenshot {
+            height: 100px;
+            margin: 10px;
+            transition: all .1s;
+
+            &:hover {
+              height: 110px;
+              margin: 0;
+              transition: all .25s;
+            }
+          }
         }
       }
 
@@ -107,6 +121,15 @@
             margin: 0 25px;
           }
         }
+      }
+    }
+  }
+
+  .modal {
+    .modal-content {
+      .game-screenshot {
+        max-width: 50vw;
+        height: 50vh;
       }
     }
   }
