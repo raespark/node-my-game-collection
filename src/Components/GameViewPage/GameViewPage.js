@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Redirect, Link} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import StarRating from '../StarRating/StarRating';
 import GameData from '../../mockGameData';
@@ -34,7 +34,6 @@ class ViewGame extends Component {
   }
 
   render() {
-    console.log(this.game);
     return (
       <div className="view-game">
         <NavBar/>
@@ -85,8 +84,8 @@ class ViewGame extends Component {
               <h3>{'Screenshots:'}</h3>
               <div className="screenshot-list">
                 {
-                  this.game.screenshots.map(screenshot => (
-                    <img className="game-screenshot" src={screenshot} alt={this.game.title + ' screenshot'} onClick={(e) => this.loadModalImage(screenshot)}/>
+                  this.game.screenshots.map((screenshot, i) => (
+                    <img key={i} className="game-screenshot" src={screenshot} alt={this.game.title + ' screenshot'} onClick={(e) => this.loadModalImage(screenshot)}/>
                   )
                 )}
               </div>

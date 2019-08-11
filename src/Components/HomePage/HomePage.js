@@ -74,6 +74,7 @@ class HomePage extends Component {
     if(type === 3) {
       this.setState({textFilter: filter}, this.filter);
     }
+    window.scrollTo(0,0);
   }
 
   render() {
