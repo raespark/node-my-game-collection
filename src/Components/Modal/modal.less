@@ -4,6 +4,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
+  z-index: 100;
 
   .modal-background {
     position: fixed;
@@ -11,18 +12,18 @@
     opacity: .75;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    z-index: 10;
   }
 
   .modal-container {
     position: fixed;
     height: calc(100vh - @header-height);
     width: 100vw;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    .modal-content {
-      z-index: 1;
+    .modal-content { 
       margin: 0;
     }
   }
