@@ -1,122 +1,125 @@
 @import '../../variables.less';
 
 .view-game {
-  display: flex;
-  justify-content: center;
   min-height: calc(100vh - @header-height);
 
-  .body {
-    width: 75%;
-    padding: 50px 30px;
-    background-color: @white;
+  .game-content {
     display: flex;
+    justify-content: center;
     
-    p {
-      margin: 5px 0;
-      font-size: 18px;
-    }
-
-    h3 {
-      margin: 10px 0;
-    }
-
-    .image-column {
-      margin-right: 35px;
+    .body {
+      width: 75%;
+      padding: 50px 30px;
+      background-color: @white;
       display: flex;
-      flex-flow: column nowrap;
-
-      .game-cover-image {
-        max-width: 100%;
-        height: auto;
-        width: auto;
-        border-radius: 10px;
+      
+      p {
+        margin: 5px 0;
+        font-size: 18px;
       }
 
-      .star-rating {
-        margin: 20px 0;
+      h3 {
+        margin: 10px 0;
       }
 
-      .age-rating {
-        margin: 20px 0;
+      .image-column {
+        margin-right: 35px;
         display: flex;
-        justify-content: center;
+        flex-flow: column nowrap;
 
-        .esrb-logo {
-          height: 100px;
+        .game-cover-image {
+          max-width: 100%;
+          height: auto;
           width: auto;
-        }
-      }
-
-      .genres {
-        .genre-list {
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: center;
-        }
-  
-        .no-genres-text {
-          font-weight: bold;
-          color: @gray;
-        }
-      }
-    }
-
-    .game-description-column {
-      width: 85%;
-      .game-header {
-        .game-title {
-          margin-top: 0;
+          border-radius: 10px;
         }
 
-        .game-title-hr {
-          border: initial;
-          border-style: solid;
-          border-color: @light-gray;
-          border-width: 1px;
-          color: @light-gray;
-          margin-right: 35px;
-          margin-bottom: 20px;
-          margin-left: 0;
+        .star-rating {
+          margin: 20px 0;
         }
-      }
 
-      .game-description {
-        font-weight: bold;
-        font-size: 20px;
-        color: @gray;
-        text-align: justify;
-        padding-right: 35px;
-      }
-
-      .game-website {
-        margin: 25px 0;
-      }
-
-      .screenshots {
-        .screenshot-list {
+        .age-rating {
+          margin: 20px 0;
           display: flex;
           justify-content: center;
-          flex-flow: row wrap;
 
-          .game-screenshot {
+          .esrb-logo {
             height: 100px;
-            margin: 10px;
-            transition: all .1s;
+            width: auto;
+          }
+        }
 
-            &:hover {
-              transform: scale(1.1);
-              transition: all .25s;
-            }
+        .genres {
+          .genre-list {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+          }
+    
+          .no-genres-text {
+            font-weight: bold;
+            color: @gray;
           }
         }
       }
 
-      .platforms {
-        .platform-list {
-          display: flex;
+      .game-description-column {
+        width: 85%;
+        .game-header {
+          .game-title {
+            margin-top: 0;
+          }
 
-          .platform {
-            margin: 0 25px;
+          .game-title-hr {
+            border: initial;
+            border-style: solid;
+            border-color: @light-gray;
+            border-width: 1px;
+            color: @light-gray;
+            margin-right: 35px;
+            margin-bottom: 20px;
+            margin-left: 0;
+          }
+        }
+
+        .game-description {
+          font-weight: bold;
+          font-size: 20px;
+          color: @gray;
+          text-align: justify;
+          padding-right: 35px;
+        }
+
+        .game-website {
+          margin: 25px 0;
+        }
+
+        .screenshots {
+          .screenshot-list {
+            display: flex;
+            justify-content: center;
+            flex-flow: row wrap;
+
+            .game-screenshot {
+              height: 100px;
+              margin: 10px;
+              transition: all .1s;
+
+              &:hover {
+                transform: scale(1.1);
+                transition: all .25s;
+              }
+            }
+          }
+        }
+
+        .platforms {
+          .platform-list {
+            display: flex;
+
+            .platform {
+              margin: 0 25px;
+            }
           }
         }
       }

@@ -80,7 +80,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="home-page">
-        <NavBar className='not-on-mobile'/>
+        <NavBar/>
         <FilterSideBar toggleFilter={this.handleToggleFilter}/>
         <div className = 'body'>
           <GameList games={this.state.games}/>

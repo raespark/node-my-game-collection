@@ -48,7 +48,7 @@ class FilterSideBar extends Component {
     return (
       <div className={classnames({collapsable: this.state.canCollapse}, {collapsed: this.state.collapse},'filter-side-bar')}>
         <div className="sidebar-body">
-          <h3 className="header not-on-mobile">{'Filters'}</h3>
+          <h3 className="header">{'Filters'}</h3>
           <div className="filters">
             <div className="row">
               <SearchBar onChange={(e) => {this.handleFilter(e.target.value, 3)}}/>

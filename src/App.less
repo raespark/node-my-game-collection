@@ -5,6 +5,7 @@
   min-height: calc(100vh - @header-height);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding-top: @header-height;
+  position: relative;
 
   hr {
     background-color: @gray;
@@ -17,26 +18,6 @@
 
     &:hover, &:visited {
       color: @accent-color-dark;
-    }
-  }
-
-  .mobile-only {
-    display: none;
-  }
-
-  .not-on-mobile {
-    display: inline;
-  }
-}
-
-@media (max-width: @mobile-screen-max) {
-  .App {
-    .mobile-only {
-      display: inline;
-    }
-
-    .not-on-mobile {
-      display: none;
     }
   }
 }

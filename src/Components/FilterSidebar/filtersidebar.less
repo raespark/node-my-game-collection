@@ -64,7 +64,7 @@
 
 @media (max-width: @mobile-screen-max) {
   .filter-side-bar {
-    height: @sidebar-height;
+    height: calc(100vh - 2 * @sidebar-padding - 3 * @header-height);
     margin-bottom: 10px;
     transition: top .5s;
     padding: @sidebar-padding;
@@ -80,8 +80,12 @@
         flex: 0 0 100%;
         margin-right: 0;
         display: block;
-        max-height: calc(@sidebar-height - 25px - 2 * @sidebar-padding);
+        max-height: calc(100% - @header-height);
         overflow: scroll;
+
+        .header {
+          display: none;
+        }
       }
 
       .side-bar-collapsable {
@@ -102,7 +106,7 @@
       &.collapsed {
         transition: top .5s;
         left: 0;
-        top: calc(-1 * (@sidebar-height + 2 * @sidebar-padding) + 2 * @header-height);
+        top: calc(-1 * (calc(100vh - 2 * @sidebar-padding - @header-height) + 2 * @sidebar-padding) + 4 * @header-height);
         
         .side-bar-collapsable {
           img {

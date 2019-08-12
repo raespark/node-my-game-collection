@@ -63,7 +63,7 @@
         /* place for '...' */
         margin-right: -30px;
         padding-right: 30px;
-        padding-top: 16px;
+        padding-top: 15px;
 
         .description-text {
           margin-top: 0;
@@ -135,12 +135,19 @@
 
 @media (max-width: @mobile-screen-max) {
   .game-card {
+    margin-top: 25px;
 
     .image-and-description {
       .game-cover {
         width: 100%;
         display: flex;
         justify-content: center;
+
+        .game-cover-image {
+          height: auto;
+          width: auto;
+          max-width: 250px;
+        }
       }
 
       .game-info {
@@ -152,7 +159,7 @@
 
           .title-header {
             margin-right: 0;
-            margin-top: 16px;
+            margin-top: 15px;
           }
 
           .game-title-hr {
@@ -172,10 +179,18 @@
 
       .platforms {
         width: 100%;
+        text-align: center;
+        .platform-list {
+          justify-content: center;
+        }
       }
 
       .genres {
         width: 100%;
+        text-align: center;
+        .genre-list {
+          justify-content: center;
+        }
       }
     }
 
