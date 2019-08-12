@@ -56,7 +56,7 @@ class ViewGame extends Component {
                   <img className="esrb-logo" src={this.game.ESRB.ratingCover} alt="esrb-rating"/>
                 </div>}
               <div className="genres">
-              <h3>{'Genres:'}</h3>
+                <h3>{'Genres:'}</h3>
                 {!!this.game.genres.length && <div className="genre-list">
                   {this.game.genres.map((genre,i) => (
                     <Genre key={i} genre={genre.name}/>
@@ -72,6 +72,9 @@ class ViewGame extends Component {
                 <h2 className="game-title">{this.game.title + ' - ' + this.game.yearReleased}</h2>
                 <hr className="game-title-hr"/>
               </div>
+              <div className = "mobile-game-cover">
+                <img className="game-cover-image" src={this.game.cover} alt={this.game.title + ' cover'}/>
+              </div>
               <p className="game-description">
                 {this.game.description}
               </p>
@@ -81,6 +84,13 @@ class ViewGame extends Component {
                   <a className="website-link" target="_blank" rel="nofollow noopener noreferrer" href={this.game.website}>{this.game.website}</a>
                 </p>
               }
+              <div className="mobile-released">
+                <p><b>{'Released: '}</b>{this.game.released.getMonth() + '/' + this.game.released.getDate() + '/' + this.game.released.getFullYear()}</p>
+              </div>
+              <div className="mobile-rating">
+                <p><b className="rating-title">{'Rating: '}</b></p>
+                <StarRating stars={this.game.rating}/>
+              </div>
               <div className="screenshots">
                 <h3>{'Screenshots:'}</h3>
                 <div className="screenshot-list">
@@ -92,13 +102,31 @@ class ViewGame extends Component {
                 </div>
               </div>
               <div className="platforms">
-              <h3>{'Owned on:'}</h3>
-              <div className="platform-list">
-                { this.game.platforms.map((platform, i) => (
-                  <Platform key={i} platform={platform}/>
-                ))}
+                <h3>{'Owned on:'}</h3>
+                <div className="platform-list">
+                  { this.game.platforms.map((platform, i) => (
+                    <Platform key={i} platform={platform}/>
+                  ))}
+                </div>
               </div>
-            </div>
+              <div className="mobile-genres genres">
+                <h3>{'Genres:'}</h3>
+                {!!this.game.genres.length && <div className="genre-list">
+                  {this.game.genres.map((genre,i) => (
+                    <Genre key={i} genre={genre.name}/>
+                  ))}
+                </div>}
+                {!this.game.genres.length && <div className="no-genres-text">
+                  {'- No Genres -'}
+                </div>}
+              </div>
+
+              {this.game.ESRB && <div className="mobile-age-rating">
+                <h3>{'ESRB: '}</h3>
+                <div className="age-rating">
+                  <img className="esrb-logo" src={this.game.ESRB.ratingCover} alt="esrb-rating"/>
+                </div>
+              </div>}
             </div>
           </div>}
         </div>

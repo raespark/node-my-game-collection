@@ -6,12 +6,13 @@
   .game-content {
     display: flex;
     justify-content: center;
-    
+
     .body {
       width: 75%;
       padding: 50px 30px;
       background-color: @white;
       display: flex;
+      min-height: calc(100vh - @header-height - 100px);
       
       p {
         margin: 5px 0;
@@ -82,6 +83,10 @@
           }
         }
 
+        .mobile-game-cover {
+          display: none;
+        }
+
         .game-description {
           font-weight: bold;
           font-size: 20px;
@@ -91,7 +96,15 @@
         }
 
         .game-website {
-          margin: 25px 0;
+          margin: 20px 0;
+        }
+
+        .mobile-released {
+          display: none;
+        }
+
+        .mobile-rating {
+          display: none;
         }
 
         .screenshots {
@@ -116,11 +129,20 @@
         .platforms {
           .platform-list {
             display: flex;
+            flex-flow: row wrap;
 
             .platform {
               margin: 0 25px;
             }
           }
+        }
+
+        .mobile-genres {
+          display: none;
+        }
+
+        .mobile-age-rating {
+          display: none;
         }
       }
     }
@@ -133,5 +155,134 @@
         max-height: 60vh;
       }
     }
+  }
+}
+
+@media (max-width: @tablet-screen-max) {
+  .view-game {
+    .game-content {
+      .body {
+        width: 85%;
+      }
+    }
+  }
+}
+
+@media (max-width: @mobile-screen-max) {
+  .view-game {
+   .game-content {
+     .body {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       padding: 30px;
+
+       .image-column {
+         display: none;
+       }
+
+      .game-description-column {
+        width: 100%;
+
+        .game-header {
+            .game-title {
+              margin-top: 0;
+              text-align: center;
+            }
+
+            .game-title-hr {
+              margin-right: 0;
+            }
+          }
+
+          .mobile-game-cover {
+            display: flex;
+            justify-content: center;
+
+            .game-cover-image {
+              width: 250px;
+              height: auto;
+              border-radius: 5px;
+              margin: auto;
+            }
+          }
+
+          .game-description {
+            padding-right: 0;
+            margin: 20px 0;
+          }
+
+          .mobile-released {
+            display: inline;
+          }
+
+          .mobile-rating {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 20px 0;
+
+            .rating-title {
+              margin-right: 10px;
+            }
+          }
+
+         .screenshots {
+          .screenshot-list {
+            .game-screenshot {
+              max-width: 90%;
+              max-height: 200px;
+              height: auto;
+              width: auto;
+  
+              &:hover {
+                transform: none;
+              }
+            }
+          }
+        }
+
+        .platforms {
+          margin-top: 20px; 
+
+          .platform-list {
+            justify-content: center;
+          }
+        }
+
+        .mobile-genres {
+          margin-top: 20px;
+          display: block;
+
+          .genre-list {
+            text-align: center;
+            padding-top: 5px;
+          }
+        }
+
+        .mobile-age-rating {
+          display: block;
+          margin-top: 50px;
+
+          .age-rating {
+            display: flex;
+            justify-content: center;
+            .esrb-logo {
+              height: 150px;
+              width: auto;
+            }
+          }
+        }
+       }
+     }
+   } 
+
+   .modal {
+    .modal-content {
+      .game-screenshot {
+        max-width: 80vw;
+        max-height: 80vh;
+      }
+    }
+  }
   }
 }

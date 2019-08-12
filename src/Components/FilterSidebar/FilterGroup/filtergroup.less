@@ -13,13 +13,13 @@
     .filter {
       cursor: pointer;
 
+      .genre {
+        transition: all .1s;
+      }
+
       &.active {
         .genre {
           background-color: @accent-color-light;
-          &:hover {
-            transition: border .1s;
-            border: 2px solid @accent-color-light;
-          }
         }
       }
 
