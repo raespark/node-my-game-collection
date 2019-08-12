@@ -6,11 +6,36 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-  }
 
-  @media (max-width: @tablet-screen-max) {
+    .game-list {
+      width: 80%;
+      margin: 0 50px;
+    }
+  }
+}
+
+@media (max-width: @tablet-screen-max) {
+  .home-page {
     .body {
       padding-left: calc(@sidebar-width-collapsed + 2 * @sidebar-padding);
+      .game-list {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: @mobile-screen-max) {
+  .home-page {
+    .body {
+      padding-left: 0;
+      padding-top: calc(@header-height + 8px);
+      padding-bottom: 8px;
+
+      .game-list {
+        width: 100%;
+        margin: 0;
+      }
     }
   }
 }

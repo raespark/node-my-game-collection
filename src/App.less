@@ -19,4 +19,24 @@
       color: @accent-color-dark;
     }
   }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .not-on-mobile {
+    display: inline;
+  }
+}
+
+@media (max-width: @mobile-screen-max) {
+  .App {
+    .mobile-only {
+      display: inline;
+    }
+
+    .not-on-mobile {
+      display: none;
+    }
+  }
 }

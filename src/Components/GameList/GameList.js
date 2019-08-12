@@ -53,6 +53,7 @@ class GameList extends Component {
         newGames = this.props.games.slice(this.state.currentOffset);
       }
       
+      window.scrollTo(0,0);
       this.setState({currentOffset: newOffset, games: newGames, canPageUp: this.canPageUp(newOffset), canPageDown: true});
     }
   }
@@ -63,6 +64,7 @@ class GameList extends Component {
 
       let newGames = this.props.games.slice(newOffset - this.paginationOffset, newOffset);
 
+      window.scrollTo(0,0);
       this.setState({currentOffset: newOffset, games: newGames, canPageDown: this.canPageDown(newOffset), canPageUp: true});
     }
   }

@@ -11,10 +11,12 @@
     flex-flow: row wrap;
     width: 100%;
 
-    .game-cover-image {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
+    .game-cover {
+      .game-cover-image {
+        width: 200px;
+        height: auto;
+        border-radius: 10px;
+      }
     }
 
     .game-info {
@@ -128,5 +130,58 @@
     color: @gray;
     margin-top: 20px;
     margin-bottom: 5px;
+  }
+}
+
+@media (max-width: @mobile-screen-max) {
+  .game-card {
+
+    .image-and-description {
+      .game-cover {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .game-info {
+        width: 100%;
+        padding: 0;
+
+        .game-title {
+          text-align: center;
+
+          .title-header {
+            margin-right: 0;
+            margin-top: 16px;
+          }
+
+          .game-title-hr {
+            margin-right: 0;
+            width: 100%;
+          }
+        }
+
+        .star-rating {
+          justify-content: center;
+        }
+      }
+    }
+
+    .genres-and-platforms {
+      display: block;
+
+      .platforms {
+        width: 100%;
+      }
+
+      .genres {
+        width: 100%;
+      }
+    }
+
+    .game-card-hr {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 }

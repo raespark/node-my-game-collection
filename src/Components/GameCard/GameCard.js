@@ -13,7 +13,7 @@ class GameCard extends Component {
     return (
       <div key={game.id} id={game.id} className="game game-card">
         <div className="image-and-description">
-          <Link to={gameLink}>
+          <Link className="game-cover" to={gameLink}>
             <img className="game-cover-image" src={game.cover} alt={game.title + ' cover'}/>
           </Link>
           <div className="game-info">
