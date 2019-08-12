@@ -82,7 +82,7 @@ class HomePage extends Component {
       <div className="home-page">
         <NavBar/>
         <FilterSideBar toggleFilter={this.handleToggleFilter}/>
-        <div className = 'body'>
+        <div className = "body">
           <GameList games={this.state.games}/>
         </div>
       </div>

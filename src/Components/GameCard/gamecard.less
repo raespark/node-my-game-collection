@@ -171,8 +171,33 @@
         .star-rating {
           justify-content: center;
         }
+
+        .game-description {
+          width: 100%;
+          padding-right: 0;
+          margin-right: 0;
+
+            &:before {
+              /* points in the end */
+              content: '...';
+              /* absolute position */
+              position: absolute;
+              /* set position to right bottom corner of block */
+              right: 0;
+              bottom: 0;
+              background-color: white;
+              padding: 0 5px;
+            }
+    
+            /* hide ... if we have text, which is less than or equal to max lines */
+            &:after {
+              /* points in the end */
+              content: '';
+              background-color: transparent;
+            }
+          }
+        }
       }
-    }
 
     .genres-and-platforms {
       display: block;
