@@ -23,7 +23,7 @@ class FilterSideBar extends Component {
 
   //Check for resize to collapse sidebar
   //Code from: https://stackoverflow.com/questions/44480053/how-to-detect-if-screen-size-has-changed-to-mobile-in-react
-  componentDidMount() {
+  componentWillMount() {
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
   }
